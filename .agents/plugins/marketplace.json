@@ -1,0 +1,20 @@
+{
+  "name": "harness-engineering-marketplace",
+  "interface": {
+    "displayName": "Harness Engineering Plugins"
+  },
+  "plugins": [
+    {
+      "name": "harness-engineering",
+      "source": {
+        "source": "local",
+        "path": "./plugins/harness-engineering"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
