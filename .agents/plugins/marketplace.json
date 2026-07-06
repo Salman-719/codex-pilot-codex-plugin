@@ -1,14 +1,14 @@
 {
-  "name": "harness-engineering-marketplace",
+  "name": "codex-pilot-marketplace",
   "interface": {
-    "displayName": "Harness Engineering Plugins"
+    "displayName": "CodexPilot Plugins"
   },
   "plugins": [
     {
-      "name": "harness-engineering",
+      "name": "codex-pilot",
       "source": {
         "source": "local",
-        "path": "./plugins/harness-engineering"
+        "path": "./plugins/codex-pilot"
       },
       "policy": {
         "installation": "AVAILABLE",

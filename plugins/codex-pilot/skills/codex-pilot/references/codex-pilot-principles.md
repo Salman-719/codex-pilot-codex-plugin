@@ -1,6 +1,6 @@
-# Harness Engineering Principles
+# CodexPilot Principles
 
-Source:
+Inspired by:
 https://openai.com/index/harness-engineering/
 
 ## Principle 1: Humans steer, agents execute

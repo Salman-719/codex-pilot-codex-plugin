@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate active Harness Engineering execution plans."""
+"""Validate active CodexPilot execution plans."""
 
 from __future__ import annotations
 

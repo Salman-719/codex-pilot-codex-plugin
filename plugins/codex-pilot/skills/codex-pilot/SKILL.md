@@ -1,16 +1,16 @@
 ---
-name: harness-engineering
-description: "Use for agent-first software engineering with Codex: repo analysis, AGENTS.md design, execution plans, verification loops, architecture guardrails, review loops, documentation systems, and recurring cleanup."
+name: codex-pilot
+description: "Use to guide Codex through repository setup, planning, verification, durable project guidance, and repeated-failure diagnosis: repo analysis, AGENTS.md design, execution plans, architecture guardrails, review loops, and cleanup."
 ---
 
-# Harness Engineering
+# CodexPilot
 
-Source inspiration:
+Inspired by OpenAI's Harness Engineering article:
 https://openai.com/index/harness-engineering/
 
 ## Purpose
 
-Use this skill to apply agent-first software engineering in a repository.
+Use this skill to pilot Codex through a repository so it can understand, modify, verify, and maintain the project more reliably.
 
 The goal is not only to complete the current coding task. The goal is to improve the repository so future Codex runs can understand, verify, modify, review, and maintain it more reliably.
 
@@ -36,13 +36,13 @@ Use this skill when the user asks to:
 - reduce codebase entropy
 - build reusable agent workflows
 
-Do not use this skill for tiny one-line edits unless the user explicitly asks for harness engineering.
+Do not use this skill for tiny one-line edits unless the user explicitly asks for repo readiness, agent readiness, or agent-first engineering.
 
 ## References
 
 Read these only when relevant:
 
-- `references/harness-engineering-principles.md` - short principle summary
+- `references/codex-pilot-principles.md` - short principle summary
 - `references/repo-knowledge-system.md` - repo-as-system-of-record guidance
 - `references/verification-loop.md` - verification strategy by change type
 - `references/architecture-and-taste.md` - turning taste into enforceable rules

@@ -38,4 +38,4 @@ if [ ! -f docs/exec-plans/active/example.md ]; then
   echo "Created docs/exec-plans/active/example.md"
 fi
 
-echo "Harness structure created."
+echo "CodexPilot repo structure created."

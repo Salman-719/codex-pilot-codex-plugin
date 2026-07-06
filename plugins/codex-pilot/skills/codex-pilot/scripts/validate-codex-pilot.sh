@@ -15,7 +15,7 @@ required_paths=(
 
 for path in "${required_paths[@]}"; do
   if [ ! -e "$path" ]; then
-    echo "Missing required harness path: $path"
+    echo "Missing required CodexPilot repo path: $path"
     missing=1
   fi
 done
@@ -35,4 +35,4 @@ if [ "$missing" -eq 1 ]; then
   exit 1
 fi
 
-echo "Harness structure looks valid."
+echo "CodexPilot repo structure looks valid."

@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-plugin_root="plugins/harness-engineering"
-skill_root="$plugin_root/skills/harness-engineering"
+plugin_root="plugins/codex-pilot"
+skill_root="$plugin_root/skills/codex-pilot"
 
 required_files=(
   ".agents/plugins/marketplace.json"
   "$plugin_root/.codex-plugin/plugin.json"
   "$skill_root/SKILL.md"
-  "$skill_root/references/harness-engineering-principles.md"
+  "$skill_root/references/codex-pilot-principles.md"
   "$skill_root/assets/AGENTS.template.md"
   "$skill_root/assets/ARCHITECTURE.template.md"
   "$skill_root/assets/EXEC_PLAN.template.md"
-  "$skill_root/scripts/bootstrap-harness.sh"
-  "$skill_root/scripts/validate-harness.sh"
+  "$skill_root/scripts/bootstrap-codex-pilot.sh"
+  "$skill_root/scripts/validate-codex-pilot.sh"
   "$skill_root/scripts/check-doc-links.py"
   "$skill_root/scripts/check-plan-status.py"
   "$plugin_root/assets/icon.png"
@@ -39,33 +39,33 @@ python3 - <<'PY'
 import json
 from pathlib import Path
 
-manifest = json.loads(Path("plugins/harness-engineering/.codex-plugin/plugin.json").read_text())
+manifest = json.loads(Path("plugins/codex-pilot/.codex-plugin/plugin.json").read_text())
 marketplace = json.loads(Path(".agents/plugins/marketplace.json").read_text())
-skill = Path("plugins/harness-engineering/skills/harness-engineering/SKILL.md").read_text()
+skill = Path("plugins/codex-pilot/skills/codex-pilot/SKILL.md").read_text()
 
-assert manifest["name"] == "harness-engineering"
+assert manifest["name"] == "codex-pilot"
 assert manifest["version"].count(".") == 2
 assert manifest["skills"] == "./skills/"
-assert manifest["interface"]["displayName"] == "Harness Engineering"
+assert manifest["interface"]["displayName"] == "CodexPilot"
 assert len(manifest["interface"]["defaultPrompt"]) <= 3
-assert marketplace["name"] == "harness-engineering-marketplace"
-assert marketplace["plugins"][0]["source"]["path"] == "./plugins/harness-engineering"
+assert marketplace["name"] == "codex-pilot-marketplace"
+assert marketplace["plugins"][0]["source"]["path"] == "./plugins/codex-pilot"
 assert skill.startswith("---\n")
-assert "\nname: harness-engineering\n" in skill
+assert "\nname: codex-pilot\n" in skill
 assert "description:" in skill
 PY
 
 grep -q "https://openai.com/index/harness-engineering/" README.md
 grep -q "https://openai.com/index/harness-engineering/" "$skill_root/SKILL.md"
-grep -q "https://openai.com/index/harness-engineering/" "$skill_root/references/harness-engineering-principles.md"
+grep -q "https://openai.com/index/harness-engineering/" "$skill_root/references/codex-pilot-principles.md"
 
-bash -n "$skill_root/scripts/bootstrap-harness.sh"
-bash -n "$skill_root/scripts/validate-harness.sh"
+bash -n "$skill_root/scripts/bootstrap-codex-pilot.sh"
+bash -n "$skill_root/scripts/validate-codex-pilot.sh"
 python3 -m py_compile "$skill_root/scripts/check-doc-links.py"
 python3 -m py_compile "$skill_root/scripts/check-plan-status.py"
 
-test -x "$skill_root/scripts/bootstrap-harness.sh"
-test -x "$skill_root/scripts/validate-harness.sh"
+test -x "$skill_root/scripts/bootstrap-codex-pilot.sh"
+test -x "$skill_root/scripts/validate-codex-pilot.sh"
 test -x "$skill_root/scripts/check-doc-links.py"
 test -x "$skill_root/scripts/check-plan-status.py"
 

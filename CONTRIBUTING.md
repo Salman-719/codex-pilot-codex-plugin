@@ -22,7 +22,7 @@ Run:
 ## Release Checklist
 
 - `plugin.json` has the right repository URLs.
-- `marketplace.json` points to `./plugins/harness-engineering`.
+- `marketplace.json` points to `./plugins/codex-pilot`.
 - `SKILL.md` has `name` and `description` frontmatter.
 - Scripts are executable.
 - `./scripts/validate-plugin.sh` passes.
