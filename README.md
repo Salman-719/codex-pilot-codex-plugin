@@ -24,7 +24,7 @@ This is not a website, SaaS product, API, or background service. It is an instal
 
 ## What It Does
 
-After installation, you can ask Codex to use `@codex-pilot`.
+After installation, Codex can use CodexPilot implicitly when the task matches repo setup, repo guidance, planning, verification, or repeated-failure diagnosis.
 
 Codex can then help you:
 
@@ -35,6 +35,16 @@ Codex can then help you:
 - identify missing tests, lint commands, build checks, and CI checks
 - turn repeated failures into durable repo guidance
 - keep future Codex runs from rediscovering the same context
+
+## Automatic Use
+
+CodexPilot is meant to become automatic in two ways.
+
+First, after installation, Codex can choose the `codex-pilot` skill implicitly when your request is about repo readiness, `AGENTS.md`, missing verification, unclear architecture, or repeated Codex failures. You do not need to type `@codex-pilot` every time.
+
+Second, and more importantly, CodexPilot writes durable repo guidance. Once it creates or improves `AGENTS.md`, future Codex runs in that repo automatically read those instructions even if you do not mention CodexPilot.
+
+The explicit prompts below are only setup shortcuts and fallback examples. They are not the intended day-to-day interface.
 
 ## Quick Install
 
@@ -53,26 +63,18 @@ codex
 
 Choose **CodexPilot Plugins**, install **CodexPilot**, then start a new thread.
 
-## Start Here
+## One-Time Setup
 
-In a repo you want to improve, ask:
+In a repo you want CodexPilot to prepare, ask once:
 
 ```text
-@codex-pilot make this repo easier for Codex to work in.
+@codex-pilot set up this repo so future Codex runs have durable guidance.
 ```
 
-Other useful prompts:
+If Codex is already choosing the plugin implicitly, this also works:
 
 ```text
-@codex-pilot analyze this repo and tell me what is missing for reliable Codex work.
-```
-
-```text
-@codex-pilot create a starter AGENTS.md, architecture doc, execution-plan template, and verification checklist.
-```
-
-```text
-@codex-pilot Codex keeps failing on this repo. Diagnose what it cannot see or verify, then propose durable fixes.
+Set up this repo so future Codex runs have durable guidance.
 ```
 
 ## What It May Add To Your Repo

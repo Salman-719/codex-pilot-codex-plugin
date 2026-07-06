@@ -8,6 +8,7 @@ required_files=(
   ".agents/plugins/marketplace.json"
   "$plugin_root/.codex-plugin/plugin.json"
   "$skill_root/SKILL.md"
+  "$skill_root/agents/openai.yaml"
   "$skill_root/references/codex-pilot-principles.md"
   "$skill_root/assets/AGENTS.template.md"
   "$skill_root/assets/ARCHITECTURE.template.md"
@@ -44,7 +45,7 @@ marketplace = json.loads(Path(".agents/plugins/marketplace.json").read_text())
 skill = Path("plugins/codex-pilot/skills/codex-pilot/SKILL.md").read_text()
 
 assert manifest["name"] == "codex-pilot"
-assert manifest["version"].count(".") == 2
+assert manifest["version"] == "0.3.0"
 assert manifest["skills"] == "./skills/"
 assert manifest["interface"]["displayName"] == "CodexPilot"
 assert len(manifest["interface"]["defaultPrompt"]) <= 3

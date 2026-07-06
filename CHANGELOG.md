@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0 - Unreleased
+
+- Made implicit/automatic use the primary product model.
+- Added skill metadata that explicitly allows implicit invocation.
+- Updated the README to explain automatic skill selection and durable `AGENTS.md` guidance.
+- Updated the `AGENTS.md` template so generated repos carry automatic Codex guidance.
+
 ## 0.2.0 - Unreleased
 
 - Renamed the public plugin from Harness Engineering to CodexPilot.

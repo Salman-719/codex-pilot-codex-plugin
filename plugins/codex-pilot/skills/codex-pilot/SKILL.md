@@ -1,6 +1,6 @@
 ---
 name: codex-pilot
-description: "Use to guide Codex through repository setup, planning, verification, durable project guidance, and repeated-failure diagnosis: repo analysis, AGENTS.md design, execution plans, architecture guardrails, review loops, and cleanup."
+description: "Automatically use when a repo needs better Codex support: missing AGENTS.md, unclear setup or verification, repeated Codex failures, repo onboarding, execution plans, architecture guardrails, durable docs, tests, scripts, CI, or cleanup loops."
 ---
 
 # CodexPilot
@@ -12,7 +12,7 @@ https://openai.com/index/harness-engineering/
 
 Use this skill to pilot Codex through a repository so it can understand, modify, verify, and maintain the project more reliably.
 
-The goal is not only to complete the current coding task. The goal is to improve the repository so future Codex runs can understand, verify, modify, review, and maintain it more reliably.
+The goal is not only to complete the current coding task. The goal is to improve the repository so future Codex runs can automatically understand, verify, modify, review, and maintain it more reliably.
 
 Core principle:
 
@@ -22,7 +22,7 @@ Humans steer. Agents execute.
 
 ## When To Use
 
-Use this skill when the user asks to:
+Use this skill automatically when the user asks to:
 
 - improve Codex performance on a repo
 - create or improve `AGENTS.md`
@@ -35,8 +35,19 @@ Use this skill when the user asks to:
 - create architecture constraints
 - reduce codebase entropy
 - build reusable agent workflows
+- onboard Codex into an unfamiliar repo
+- make a complex change where setup, tests, or architecture rules are unclear
 
 Do not use this skill for tiny one-line edits unless the user explicitly asks for repo readiness, agent readiness, or agent-first engineering.
+
+## Automatic Use Model
+
+CodexPilot has two levels of automatic behavior:
+
+1. Skill-level automatic use: after the plugin is installed, Codex may select this skill implicitly when the user's task matches the description above. The user does not have to type `@codex-pilot` every time.
+2. Repo-level automatic use: when CodexPilot creates or improves `AGENTS.md`, future Codex runs in that repo automatically read the repo guidance without needing the plugin to be invoked explicitly.
+
+The durable repo-level guidance is the more reliable automation path. Prefer updating `AGENTS.md`, docs, scripts, tests, and CI so the repository itself teaches future Codex runs how to work.
 
 ## References
 
@@ -59,7 +70,7 @@ Read these only when relevant:
    - `tests/`
    - package scripts
    - CI configuration
-4. If the repo lacks a map, propose or create one.
+4. If the repo lacks a map, propose or create a CodexPilot structure.
 5. For non-trivial work, write an execution plan before editing.
 6. Implement in small, reviewable steps.
 7. Run relevant verification:
@@ -88,7 +99,7 @@ Read these only when relevant:
     - what changed
     - how it was verified
     - remaining risks
-    - recommended harness improvements
+    - recommended CodexPilot or repo-guidance improvements
 
 ## Repository Knowledge System
 

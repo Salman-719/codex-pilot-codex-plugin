@@ -1,0 +1,8 @@
+interface:
+  display_name: "CodexPilot"
+  short_description: "Automatically guide Codex through better repo work."
+  brand_color: "#2563EB"
+  default_prompt: "Set up this repo so future Codex runs have durable guidance."
+
+policy:
+  allow_implicit_invocation: true

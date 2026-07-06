@@ -1,5 +1,7 @@
 # AGENTS.md
 
+This repo uses CodexPilot-style guidance. Codex should read this file automatically at the start of future tasks and follow the linked docs, commands, and planning rules without requiring an explicit plugin invocation.
+
 ## Project Map
 
 Start here:
@@ -22,6 +24,16 @@ Start here:
 5. Run relevant checks.
 6. Update docs if behavior, setup, architecture, or workflow changes.
 7. Summarize changes, verification, risks, and follow-ups.
+
+## Automatic Codex Guidance
+
+For future Codex runs, this file is the default routing layer:
+
+- Use this file before editing.
+- Follow the verification commands listed here.
+- Use execution plans for complex or risky work.
+- Update docs, tests, scripts, or CI when repeated failures reveal missing repo knowledge.
+- Keep detailed guidance in focused docs instead of expanding this file into a giant manual.
 
 ## Verification Commands
 

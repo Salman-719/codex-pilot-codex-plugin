@@ -1,7 +1,7 @@
 {
   "name": "codex-pilot",
-  "version": "0.2.0",
-  "description": "Guide Codex through repository setup, planning, verification, and durable project guidance.",
+  "version": "0.3.0",
+  "description": "Automatically guide Codex through repository setup, planning, verification, and durable project guidance when a repo needs better agent support.",
   "author": {
     "name": "Salman-719",
     "url": "https://github.com/Salman-719"
@@ -23,7 +23,7 @@
   "interface": {
     "displayName": "CodexPilot",
     "shortDescription": "Guide Codex through better repo work.",
-    "longDescription": "CodexPilot helps Codex inspect a project, create useful repo guidance, add planning templates, define verification commands, and turn repeated failures into durable docs, tests, scripts, or rules.",
+    "longDescription": "CodexPilot helps Codex automatically recognize when a repo needs better guidance, inspect the project, create useful repo docs, add planning templates, define verification commands, and turn repeated failures into durable docs, tests, scripts, or rules.",
     "developerName": "Salman-719",
     "category": "Productivity",
     "capabilities": [
@@ -34,9 +34,9 @@
     "privacyPolicyURL": "https://github.com/Salman-719/codex-pilot-codex-plugin/blob/main/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/Salman-719/codex-pilot-codex-plugin/blob/main/TERMS.md",
     "defaultPrompt": [
-      "Pilot Codex through this repo.",
-      "Create AGENTS.md, docs, plans, and checks.",
-      "Diagnose repeated Codex failures in this repo."
+      "Set up CodexPilot in this repo.",
+      "Audit this repo for missing Codex context.",
+      "Turn repeated Codex failures into repo rules."
     ],
     "brandColor": "#2563EB",
     "composerIcon": "./assets/icon.png",
