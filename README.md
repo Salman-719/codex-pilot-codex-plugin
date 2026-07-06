@@ -1,13 +1,23 @@
 # CodexPilot
 
-CodexPilot is a Codex plugin for developers who want Codex to work more reliably inside their projects.
+CodexPilot is an installable Codex workflow plugin for developers working inside software repositories.
 
-It helps Codex turn a messy or under-documented repository into a project with clearer instructions, better planning habits, and repeatable verification checks.
+Its job is to help Codex make a repo easier to understand, edit, verify, and maintain.
+
+It does not serve normal app users. It serves developers using Codex inside a repo.
+
+CodexPilot packages a repeatable repo-improvement workflow inspired by OpenAI's Harness Engineering article. It helps Codex inspect repo structure, create missing guidance, use execution plans, improve verification, diagnose repeated failures, and turn implicit engineering knowledge into durable repo artifacts such as docs, tests, scripts, lint rules, schemas, and CI checks.
+
+One-line summary:
+
+```text
+CodexPilot helps Codex understand your repo, plan safely, verify changes, and improve the codebase over time.
+```
 
 Inspired by OpenAI's Harness Engineering article:
 https://openai.com/index/harness-engineering/
 
-This is an independent community plugin. It is not an official OpenAI plugin.
+CodexPilot is an independent plugin for Codex. It is not created, sponsored, or endorsed by OpenAI.
 
 ## Who This Is For
 
@@ -35,6 +45,16 @@ Codex can then help you:
 - identify missing tests, lint commands, build checks, and CI checks
 - turn repeated failures into durable repo guidance
 - keep future Codex runs from rediscovering the same context
+
+When installed, it exposes the CodexPilot plugin and one bundled skill.
+
+Users can invoke the plugin as:
+
+```text
+@codex-pilot
+```
+
+Where supported, users can also select or mention the underlying skill through Codex skill controls such as `/skills` or `$codex-pilot`. Codex can also invoke it implicitly when the task matches the skill description.
 
 ## Automatic Use
 
@@ -105,6 +125,17 @@ The scripts are small helper tools bundled with the plugin so Codex can do concr
 
 They are intentionally lightweight. They do not run in the background, call external services, or collect data. They only run if Codex or a user invokes them.
 
+The scripts are worth keeping because they turn CodexPilot from advice-only guidance into something Codex can execute when setting up or checking a repo.
+
+## Implementation Links
+
+- [plugin.json](plugins/codex-pilot/.codex-plugin/plugin.json)
+- [SKILL.md](plugins/codex-pilot/skills/codex-pilot/SKILL.md)
+- [bootstrap-codex-pilot.sh](plugins/codex-pilot/skills/codex-pilot/scripts/bootstrap-codex-pilot.sh)
+- [validate-codex-pilot.sh](plugins/codex-pilot/skills/codex-pilot/scripts/validate-codex-pilot.sh)
+- [check-doc-links.py](plugins/codex-pilot/skills/codex-pilot/scripts/check-doc-links.py)
+- [check-plan-status.py](plugins/codex-pilot/skills/codex-pilot/scripts/check-plan-status.py)
+
 ## Local Development
 
 From this repository root:
@@ -131,6 +162,8 @@ plugins/codex-pilot/
 scripts/validate-plugin.sh
 .github/workflows/validate.yml
 ```
+
+Only `plugin.json` lives inside `.codex-plugin/`. Skills, assets, scripts, references, and optional integration files live at the plugin root or inside the skill folder.
 
 ## License
 

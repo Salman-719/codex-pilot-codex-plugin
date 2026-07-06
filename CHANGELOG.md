@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 - Unreleased
+
+- Polished the README into clearer user-facing positioning.
+- Added relative implementation links for public GitHub browsing.
+- Clarified plugin invocation vs bundled skill selection.
+- Added a stronger unofficial-project disclaimer.
+- Updated plugin metadata with sharper product copy.
+
 ## 0.3.0 - Unreleased
 
 - Made implicit/automatic use the primary product model.

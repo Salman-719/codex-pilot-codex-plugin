@@ -1,7 +1,7 @@
 {
   "name": "codex-pilot",
-  "version": "0.3.0",
-  "description": "Automatically guide Codex through repository setup, planning, verification, and durable project guidance when a repo needs better agent support.",
+  "version": "0.3.1",
+  "description": "Help Codex understand your repo, plan safely, verify changes, and improve the codebase over time.",
   "author": {
     "name": "Salman-719",
     "url": "https://github.com/Salman-719"
@@ -23,7 +23,7 @@
   "interface": {
     "displayName": "CodexPilot",
     "shortDescription": "Guide Codex through better repo work.",
-    "longDescription": "CodexPilot helps Codex automatically recognize when a repo needs better guidance, inspect the project, create useful repo docs, add planning templates, define verification commands, and turn repeated failures into durable docs, tests, scripts, or rules.",
+    "longDescription": "CodexPilot is an unofficial Codex workflow plugin for agent-ready repositories. It helps Codex inspect repo structure, create missing guidance, use execution plans, improve verification, diagnose repeated failures, and turn implicit engineering knowledge into durable repo artifacts such as docs, tests, scripts, lint rules, schemas, and CI checks.",
     "developerName": "Salman-719",
     "category": "Productivity",
     "capabilities": [

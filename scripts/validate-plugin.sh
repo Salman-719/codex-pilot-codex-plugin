@@ -45,7 +45,7 @@ marketplace = json.loads(Path(".agents/plugins/marketplace.json").read_text())
 skill = Path("plugins/codex-pilot/skills/codex-pilot/SKILL.md").read_text()
 
 assert manifest["name"] == "codex-pilot"
-assert manifest["version"] == "0.3.0"
+assert manifest["version"] == "0.3.1"
 assert manifest["skills"] == "./skills/"
 assert manifest["interface"]["displayName"] == "CodexPilot"
 assert len(manifest["interface"]["defaultPrompt"]) <= 3
@@ -59,6 +59,8 @@ PY
 grep -q "https://openai.com/index/harness-engineering/" README.md
 grep -q "https://openai.com/index/harness-engineering/" "$skill_root/SKILL.md"
 grep -q "https://openai.com/index/harness-engineering/" "$skill_root/references/codex-pilot-principles.md"
+grep -q "not created, sponsored, or endorsed by OpenAI" README.md
+grep -q "(plugins/codex-pilot/skills/codex-pilot/SKILL.md)" README.md
 
 bash -n "$skill_root/scripts/bootstrap-codex-pilot.sh"
 bash -n "$skill_root/scripts/validate-codex-pilot.sh"
